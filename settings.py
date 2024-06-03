@@ -1,4 +1,5 @@
 # -*- encoding: UTF-8 -*-
+import logging
 import yaml
 import os
 import akshare as ak
@@ -15,6 +16,7 @@ def init():
     mask = (df['买方机构次数'] > 1)  # 机构买入次数大于1
     df = df.loc[mask]
     top_list = df['代码'].tolist()
+    logging.info("top_list size: %s", len(top_list))
 
 
 def config():
